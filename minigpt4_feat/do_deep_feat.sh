@@ -1,13 +1,12 @@
 gpu_id=$1 
 rootpath=$2
-oversample=$3
-overwrite=$4
-raw_feat_name=$5
-test_collection=$6
-model_dir=$7
-model_name=$8
-batch_size=$9
-split=${10}
+overwrite=$3
+raw_feat_name=$4
+test_collection=$5
+model_dir=$6
+model_name=$7
+batch_size=$8
+split=${9}
 echo $split
 
 
@@ -31,7 +30,6 @@ fi
 
 
 CUDA_VISIBLE_DEVICES=$gpu_id python ${BASEDIR}/extract_deep_feat.py ${test_collection} \
-                        --oversample $oversample \
                         --gpu ${gpu_id} \
                         --overwrite $overwrite \
                         --rootpath $rootpath \
