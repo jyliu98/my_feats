@@ -1,0 +1,27 @@
+# source activate clip
+# bash do_clip.sh msrvtt10k_blipcaz 1 -1
+rootpath=/data1/ljy/VisualSearch1
+overwrite=0
+
+batch_size=1024
+model_dir=-1
+model_name1=blip2
+model_name2=minigpt4
+
+raw_feat_name1=${model_name1}
+raw_feat_name2=${model_name2}
+test_collection=msrvtt10k
+gpu_id=6
+split=-1
+
+bash ./blip2_minigpt4_feat/do_deep_feat.sh ${gpu_id} \
+                    ${rootpath} \
+                    ${overwrite} \
+                    ${raw_feat_name1} \
+                    ${raw_feat_name2} \
+                    ${test_collection} \
+                    ${model_dir} \
+                    ${model_name1} \
+                    ${model_name2} \
+                    ${batch_size} \
+                    ${split}
